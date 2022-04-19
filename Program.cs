@@ -4,10 +4,8 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Extensions.Polling;
 using Telegram.Bot.Types;
-using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types.ReplyMarkups;
 using System.Collections.Generic;
-using Telegram.Bot.Types.ReplyMarkups;
 
 namespace TelegramBotExperiments
 {
@@ -97,6 +95,11 @@ namespace TelegramBotExperiments
             markup.ResizeKeyboard = true;
             //markup.InputFieldPlaceholder = "Введи серийный номер оборудования";
             return markup;
+        }
+
+        private static IReplyMarkup GetInlineButton() //инлайн не робит - ищи инфу
+        {
+            return new InlineKeyboardMarkup(new InlineKeyboardButton ("Опрос портов"));
         }
 
     }
